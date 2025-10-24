@@ -1,0 +1,1 @@
+Adversarial Vision - Hide text in images that AI can detect but humans cannot see. Experiment with contrast, opacity, micro-fonts, SVG paths, and tiled microtext to test AI visibility boundaries.

@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    /* Monokai Color Palette - VS Code Theme */
+    --background: 70 10% 15%;        /* #272822 - Dark grayish green */
+    --foreground: 60 30% 96%;        /* #F8F8F2 - Off-white */
+    --card: 70 10% 18%;              /* Slightly lighter than background */
+    --card-foreground: 60 30% 96%;
+    --popover: 70 10% 18%;
+    --popover-foreground: 60 30% 96%;
+    --primary: 191 97% 77%;          /* #66D9EF - Cyan/Blue */
+    --primary-foreground: 70 10% 15%;
+    --primary-hover: 191 97% 70%;    /* Slightly darker for hover */
+    --secondary: 70 10% 22%;         /* Muted secondary */
+    --secondary-foreground: 60 30% 96%;
+    --muted: 70 10% 22%;
+    --muted-foreground: 36 12% 55%;  /* #75715E - Muted brown */
+    --accent: 326 100% 74%;          /* #F92672 - Pink/Magenta */
+    --accent-foreground: 60 30% 96%;
+    --destructive: 326 100% 74%;     /* #F92672 - Pink for errors */
+    --destructive-foreground: 60 30% 96%;
+    --border: 70 10% 25%;
+    --input: 70 10% 25%;
+    --ring: 191 97% 77%;
+    --radius: 0.5rem;
+
+    /* Monokai accent colors for custom use */
+    --monokai-green: 80 76% 53%;     /* #A6E22E */
+    --monokai-yellow: 54 70% 68%;    /* #E6DB74 */
+    --monokai-orange: 31 100% 60%;   /* #FD971F */
+    --monokai-purple: 265 89% 79%;   /* #AE81FF */
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Cascadia Code', 'Cascadia Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-feature-settings: "rlig" 1, "calt" 1, "liga" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-family: 'Cascadia Code', 'Cascadia Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  /* Custom scrollbar for dark mode */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--secondary));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+/* Monokai-themed shadow utilities */
+@layer utilities {
+  .shadow-brutal {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 8px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  .shadow-brutal-lg {
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 12px 24px rgba(0, 0, 0, 0.7);
+  }
+
+  .shadow-brutal-xl {
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95), 0 16px 32px rgba(0, 0, 0, 0.8);
+  }
+
+  .shadow-brutal-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-brutal-hover:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 10px 20px rgba(0, 0, 0, 0.65);
+    transform: translateY(-3px);
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 8px 24px rgba(102, 217, 239, 0.4), 0 0 16px rgba(102, 217, 239, 0.25);
+  }
+
+  .shadow-glow-blue-lg {
+    box-shadow: 0 12px 36px rgba(102, 217, 239, 0.5), 0 0 24px rgba(102, 217, 239, 0.35);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: 0 8px 24px rgba(174, 129, 255, 0.4), 0 0 16px rgba(174, 129, 255, 0.25);
+  }
+
+  .shadow-glow-pink {
+    box-shadow: 0 8px 24px rgba(249, 38, 114, 0.4), 0 0 16px rgba(249, 38, 114, 0.25);
+  }
+
+  .shadow-inner-glow {
+    box-shadow: inset 0 2px 12px rgba(102, 217, 239, 0.15);
+  }
+
+  /* Custom animations */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+}

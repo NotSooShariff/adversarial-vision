@@ -1,0 +1,1 @@
+Adversarial Vision - A research toolkit showcasing text hidden in images that AI can detect but humans cannot see. Features the tagline 'CONCEAL · TEST · EXPORT' with a green ghost figure on a dark background.
