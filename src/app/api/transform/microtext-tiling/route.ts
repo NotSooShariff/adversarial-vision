@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createCanvas, loadImage, CanvasRenderingContext2D } from 'canvas';
+import { Canvas, loadImage } from '@napi-rs/canvas';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,8 +24,8 @@ export async function POST(request: NextRequest) {
 
     // Load the base image
     const img = await loadImage(image);
-    const canvas = createCanvas(img.width, img.height);
-    const ctx = canvas.getContext('2d') as unknown as CanvasRenderingContext2D;
+    const canvas = new Canvas(img.width, img.height);
+    const ctx = canvas.getContext('2d');
 
     // Draw base image
     ctx.drawImage(img, 0, 0);
