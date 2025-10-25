@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import { getBaseUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Adversarial Vision - Research Toolkit for Hidden Text in AI Vision",
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Adversarial Vision" }],
   creator: "Adversarial Vision",
   publisher: "Adversarial Vision",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(getBaseUrl()),
   alternates: {
     canonical: '/',
   },
@@ -84,6 +86,7 @@ export default function RootLayout({
             },
           }}
         />
+        <Analytics />
       </body>
     </html>
   );

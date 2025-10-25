@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
+import { getBaseUrl } from '@/lib/utils';
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const baseUrl = getBaseUrl();
 
   return NextResponse.json({
     name: 'Adversarial Vision API',
